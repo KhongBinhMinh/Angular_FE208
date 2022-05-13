@@ -1,0 +1,38 @@
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Mã GV</th>
+        <th scope="col">Tên GV</th>
+        <th scope="col">Tuổi</th>
+        <th scope="col">Giới tính</th>
+        <th scope="col">Avatar</th>
+        <th scope="col">Trạng thái</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let teacher of teachers">
+        <td>{{teacher.id}}</td>
+        <td>
+          <app-table-name [name]="teacher.name"></app-table-name>
+        </td>
+        <td>{{teacher.age}}</td>
+        <td>
+          <app-table-gender [gender]="teacher.gender ? 'Nữ':'Nam' "></app-table-gender>
+        </td>
+        <td>
+          <app-table-avatar 
+            [src]="teacher.avatar"
+            [age]="teacher.age"
+          
+          ></app-table-avatar>
+        </td>
+        <!-- <td><img src="{{teacher.avatar}}" alt="{{teacher.name}}" height="100"></td> -->
+        <td>
+          <app-table-status [status]="teacher.status ? 'Đang làm việc' : 'Đã nghỉ' "></app-table-status>
+          <!-- <span *ngIf="teacher.status === 1" class="color-blue">Đang làm việc</span>
+          <span *ngIf="teacher.status === 0" class="color-red">Đã nghỉ</span> -->
+        </td>
+      </tr>
+    </tbody>
+  </table>
