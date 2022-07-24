@@ -1,0 +1,26 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Iphone6s update",
+      "status": 1
+    },
+    {
+      "id": 2,
+      "name": "Iphone6s",
+      "status": 1
+    },
+    {
+      "id": 3,
+      "name": "Iphone6s",
+      "status": 1
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "minh@gmail.com",
+      "password": "$2a$12$qhO449Ose..X79xtP2DTa.D6Dg1eKzAvI/PpiFaetUBqbv4.EZz/y"
+    }
+  ]
+}

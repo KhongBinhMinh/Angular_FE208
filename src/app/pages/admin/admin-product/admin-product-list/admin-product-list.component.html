@@ -1,0 +1,55 @@
+<div>
+    <a routerLink="/admin/products/create">
+        <button class="btn btn-primary">Create</button>
+    </a>
+</div>
+
+
+<table class="table table-hover">
+     <thead>
+         <tr>
+             <th>ID</th>
+             <th>Name</th>
+             <th>Price</th>
+             <th>Image</th>
+             <th>Description</th>
+             <th>Status</th>
+             <th>action</th>
+         </tr>
+     </thead>
+     <tbody>
+         <tr *ngFor="let product of products">
+             <td>{{product._id}}</td>
+             <td>{{product.name}}</td>
+             <td>{{product.price}}</td>
+             <td><img src="{{product.img}}" width="100px" height="100px" alt=""></td>
+             <td>{{product.decs}}</td>
+             <td>
+                <button 
+                *ngIf="product.status === 0"
+                class="btn btn-success"
+                (click)="onUpdateStatus(product._id, 1)"
+                >ON</button>
+
+                <button 
+                *ngIf="product.status === 1"
+                class="btn btn-dark"
+                (click)="onUpdateStatus(product._id, 0)"
+                >OFF</button>
+
+             </td>
+             <td>
+                 <a routerLink="/admin/products/{{product._id}}">Detail</a>
+                 <!-- <a [routerLink]="['/admin','products',product.id]">
+                     <button class="btn btn-info">Detail</button>
+                 </a> -->
+            </td>
+            <td>
+                <a routerLink="/admin/products/edit/{{product._id}}">
+                    <button class="btn btn-danger">Edit</button>
+                </a>
+                <button class="btn btn-danger" (click)="onDelete(product._id)">DELETE</button>
+            </td>
+         </tr>
+     </tbody>
+</table>

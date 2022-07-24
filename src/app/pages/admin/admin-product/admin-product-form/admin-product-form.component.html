@@ -1,0 +1,79 @@
+<!-- Định nghĩa biến quản lí form-->
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="">Name</label>
+        <!-- Định nghĩa thuộc tính để lắng nghe input-->
+        <input 
+        type="text" 
+        class="form-control" 
+        formControlName="name">
+
+        <div>
+            <span *ngIf="productForm.get('name')"></span>
+        </div>
+         
+    </div>
+    <app-validate
+           [field]="productForm.get('name')"
+           key="Tên sản phẩm"
+        ></app-validate> 
+    <div class="form-group">
+        <label for="">Price</label>
+        <!-- Định nghĩa thuộc tính để lắng nghe input-->
+        <input 
+        type="number" 
+        class="form-control" 
+        formControlName="price">
+
+        <div>
+            <span *ngIf="productForm.get('price')"></span>
+        </div>
+          
+    </div>
+    <app-validate
+           [field]="productForm.get('price')"
+           key="giá sản phẩm"
+        ></app-validate>
+    <div class="form-group">
+        <label for="">Image</label>
+        <!-- Định nghĩa thuộc tính để lắng nghe input-->
+        <input 
+        type="text" 
+        class="form-control" 
+        formControlName="img">
+
+        <div>
+            <span *ngIf="productForm.get('img')"></span>
+        </div>
+        
+    </div>
+    <app-validate
+           [field]="productForm.get('img')"
+           key="ảnh sản phẩm"
+        ></app-validate>  
+    <div class="form-group">
+        <label for="">Description</label>
+        <!-- Định nghĩa thuộc tính để lắng nghe input-->
+        <input 
+        type="text" 
+        class="form-control" 
+        formControlName="name">
+
+        <div>
+            <span *ngIf="productForm.get('decs')"></span>
+        </div>
+         
+    </div>
+    <app-validate
+    [field]="productForm.get('decs')"
+    key="Mô tả sản phẩm"
+ ></app-validate> 
+
+    
+    <div>
+        <button 
+        class="btn btn-success"
+        [disabled]="productForm.valid"
+        >Submit</button>
+    </div>
+</form>

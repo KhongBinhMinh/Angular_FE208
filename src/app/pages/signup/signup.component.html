@@ -1,0 +1,22 @@
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="">Name</label>
+        <input type="text" class="form-control" formControlName="name">
+        <app-validate [field]="signupForm.get('name')" key="Tên"></app-validate>
+   </div>
+
+    <div class="form-group">
+         <label for="">Email</label>
+         <input type="email" class="form-control" formControlName="email">
+         <app-validate [field]="signupForm.get('email')" key="Email"></app-validate>
+    </div>
+
+    <div class="form-group">
+        <label for="">password</label>
+        <input type="password" class="form-control" formControlName="password">
+        <app-validate [field]="signupForm.get('password')" key="password"></app-validate>
+   </div>
+   <div class="form-group">
+      <button class="btn btn-primary">LOGIN</button>
+   </div>
+</form>

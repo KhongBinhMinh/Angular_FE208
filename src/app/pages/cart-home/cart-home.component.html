@@ -1,0 +1,24 @@
+<h2>Danh sách giỏ hàng </h2>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">IMAGE</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+        <th scope="col">Toatalprice</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of cartItems">
+        
+        <td>{{item.name}}</td>
+        <td><img src={{item.img}} alt="" width="100px"></td>
+        <td>{{item.price}}</td>
+        <td>{{item.value}}</td>
+        <td>{{onTotalprice(+item.price!,item.value!)}} </td> 
+      </tr>
+    
+    </tbody>
+  </table>
